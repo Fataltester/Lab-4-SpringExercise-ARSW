@@ -1,6 +1,9 @@
 # Escuela Colombiana de Ingeniería
 # Arquitecturas de Software - ARSW
 ### Taller – Principio de Inversión de dependencias, Contenedores Livianos e Inyección de dependencias.
+#### Integrantes:
+#### Santiago Gualdrón Rincon
+#### Juan David Martínez
 
 Parte I. Ejercicio básico.
 
@@ -10,10 +13,20 @@ Para ilustrar el uso del framework Spring, y el ambiente de desarrollo para el u
 
 2. Revise el archivo de configuración de Spring ya incluido en el proyecto (src/main/resources). El mismo indica que Spring buscará automáticamente los 'Beans' disponibles en el paquete indicado.
 
+<img width="1041" height="239" alt="image" src="https://github.com/user-attachments/assets/015091a6-439c-4605-a2ec-1a1e3375be52" />
+
+el context definido indica que spring escanea las clases en esa ubicación y detecta de manera automática los beans anotados, ejemplo @Component, @Service o @Repository
+
 3. Haciendo uso de la [configuración de Spring basada en anotaciones](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-spring-beans-and-dependency-injection.html) marque con las anotaciones @Autowired y @Service las dependencias que deben inyectarse, y los 'beans' candidatos a ser inyectadas -respectivamente-:
 
-	* GrammarChecker será un bean, que tiene como dependencia algo de tipo 'SpellChecker'.
-	* EnglishSpellChecker y SpanishSpellChecker son los dos posibles candidatos a ser inyectados. Se debe seleccionar uno, u otro, mas NO ambos (habría conflicto de resolución de dependencias). Por ahora haga que se use EnglishSpellChecker.
+* GrammarChecker será un bean, que tiene como dependencia algo de tipo 'SpellChecker'.
+
+Para lograr esto utilizamos la anotación @Component para marcarlo como bean, 'SpellChecker' al ser una dependencia utilizamos @Autowired para que sean inyectadas.
+
+* EnglishSpellChecker y SpanishSpellChecker son los dos posibles candidatos a ser inyectados. Se debe seleccionar uno, u otro, mas NO ambos (habría conflicto de resolución de dependencias). Por ahora haga que se use EnglishSpellChecker.
+
+Para lograr esto utilizamos la etiqueta @Service en la clase 'EnglishSpellChecker'
+ 
  
 5.	Haga un programa de prueba, donde se cree una instancia de GrammarChecker mediante Spring, y se haga uso de la misma:
 
@@ -24,5 +37,8 @@ Para ilustrar el uso del framework Spring, y el ambiente de desarrollo para el u
 		System.out.println(gc.check("la la la "));
 	}
 	```
-	
+ Al ejecutar el main obtenemos la siguiente salida:
+
+<img width="853" height="142" alt="image" src="https://github.com/user-attachments/assets/54231980-d507-4ebe-a05b-d4a4703b73d7" />
+
 6.	Modifique la configuración con anotaciones para que el Bean ‘GrammarChecker‘ ahora haga uso del  la clase SpanishSpellChecker (para que a GrammarChecker se le inyecte EnglishSpellChecker en lugar de  SpanishSpellChecker. Verifique el nuevo resultado.
