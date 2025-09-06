@@ -41,4 +41,10 @@ Para lograr esto utilizamos la etiqueta @Service en la clase 'EnglishSpellChecke
 
 <img width="853" height="142" alt="image" src="https://github.com/user-attachments/assets/54231980-d507-4ebe-a05b-d4a4703b73d7" />
 
-6.	Modifique la configuración con anotaciones para que el Bean ‘GrammarChecker‘ ahora haga uso del  la clase SpanishSpellChecker (para que a GrammarChecker se le inyecte EnglishSpellChecker en lugar de  SpanishSpellChecker. Verifique el nuevo resultado.
+6.	Modifique la configuración con anotaciones para que el Bean ‘GrammarChecker‘ ahora haga uso de la clase SpanishSpellChecker (para que a GrammarChecker se le inyecte EnglishSpellChecker en lugar de  SpanishSpellChecker. Verifique el nuevo resultado.
+
+<img width="943" height="264" alt="image" src="https://github.com/user-attachments/assets/d22cb499-8961-4b5c-a30c-890be2580f1d" />
+<img width="833" height="233" alt="image" src="https://github.com/user-attachments/assets/e83f558e-5e15-4805-b3a6-5d6c030a708c" />
+<img width="796" height="163" alt="image" src="https://github.com/user-attachments/assets/37eca379-4eb4-4e2a-80f3-638e67058751" />
+
+
