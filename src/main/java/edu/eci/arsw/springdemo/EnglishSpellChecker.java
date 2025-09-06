@@ -2,7 +2,7 @@ package edu.eci.arsw.springdemo;
 
 import org.springframework.stereotype.Service;
 
-@Service // class that'll be inyected
+//@Service // class that'll be inyected
 public class EnglishSpellChecker implements SpellChecker {
 
 	@Override
